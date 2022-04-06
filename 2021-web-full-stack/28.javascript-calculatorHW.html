@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        function add() {
+            var pp =   parseInt(document.frm.txta.value);
+          var qq =   parseInt(document.frm.txtb.value);
+            
+//            var pp =   parseInt(document.frm.txta.value); // for float
+//          var qq =   parseInt(document.frm.txtb.value);
+            
+//            var aa = pp + qq;
+//            document.frm.yaar.value = aa; // for decimal points use .tofixed(upto decimal)
+
+            var aa = pp + qq;
+            document.frm.yaar.value = aa;
+        }
+
+        function subtract() {
+            var pp = document.frm.txta.value;
+            var qq = document.frm.txtb.value;
+
+            var aa = pp - qq;
+            document.frm.yaar.value = aa;
+        }
+
+        function multiply() {
+            var pp = document.frm.txta.value;
+            var qq = document.frm.txtb.value;
+
+            var aa = pp * qq;
+            document.frm.yaar.value = aa;
+        }
+
+        function divide() {
+            var pp = document.frm.txta.value;
+            var qq = document.frm.txtb.value;
+
+            var aa = pp / qq;
+            document.frm.yaar.value = aa;
+        }
+
+    </script>
+</head>
+
+<body>
+    <center>
+
+        <form name="frm">
+
+            <table>
+
+                <tr>
+                    <td>enter value of A</td>
+                    <td><input type="text" autofocus placeholder="A" name="txta"></td>
+                </tr>
+
+                <tr>
+                    <td>enter value of B</td>
+                    <td><input type="text" placeholder="B" name="txtb"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="add" onclick="add();" name="ad">
+                        <input type="button" value="subtract" onclick="subtract();" name="sub">
+                        <input type="button" value="multiply" onclick="multiply();" name="mul">
+                        <input type="button" value="divide" onclick="divide();" name="div">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="center"><input type="reset" value="reset"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        answer
+                    </td>
+                    <td>
+                        <input type="text" name="yaar">
+                    </td>
+                </tr>
+
+
+            </table>
+
+
+
+        </form>
+
+
+
+    </center>
+</body>
+
+</html>

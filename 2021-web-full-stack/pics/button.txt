@@ -1,0 +1,2 @@
+<button class="btn btn-outline-dark" type="button" data-bs-toggle="modal" data-bs-target="#signupWin" style="margin-right:30px; border-radius: 20px;">SIGNUP</button>
+                <button class="btn btn-outline-dark" type="button" style="margin-right:30px; border-radius: 20px;" data-bs-toggle="modal" data-bs-target="#login">LOGIN</button>

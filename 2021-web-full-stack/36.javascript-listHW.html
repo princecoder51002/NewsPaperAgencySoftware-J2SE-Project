@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        //        function doset() {
+        //            var list = document.getElementById("list1");
+        //            var l2 = document.getElementById("list2");
+        //            var l3 = document.getElementById("list3");
+        //
+        //            l2.disabled = false;
+        //            l3.disabled = false;
+        //
+        //            if (list[1].selected == true) {
+        //                l2.length = 0;
+        //                l3.length = 0;
+        //
+        //                var p = "VIVO";
+        //                var opt = document.createElement("option");
+        //                opt.text = p;
+        //                opt.value = p;
+        //                l2.append(opt);
+        //
+        //                var q = "APPLE";
+        //                var opt1 = document.createElement("option");
+        //                opt1.text = q;
+        //                opt1.value = q;
+        //                l2.append(opt1);
+        //
+        //                var r = "OPPO";
+        //                var opt2 = document.createElement("option");
+        //                opt2.text = r;
+        //                opt2.value = r;
+        //                l2.append(opt2);
+        //
+        //                var s = "SAMSUNG";
+        //                var opt3 = document.createElement("option");
+        //                opt3.text = s;
+        //                opt3.value = s;
+        //                l2.append(opt3);
+        //
+        //                var u = 17999;
+        //                var opt4 = document.createElement("option");
+        //                opt4.text = u;
+        //                opt4.value = u;
+        //                l3.append(opt4);
+        //
+        //                var v = 53999;
+        //                var opt5 = document.createElement("option");
+        //                opt5.text = v;
+        //                opt5.value = v;
+        //                l3.append(opt5);
+        //
+        //                var w = 21999;
+        //                var opt6 = document.createElement("option");
+        //                opt6.text = w;
+        //                opt6.value = w;
+        //                l3.append(opt6);
+        //
+        //                var x = 27999;
+        //                var opt7 = document.createElement("option");
+        //                opt7.text = x;
+        //                opt7.value = x;
+        //                l3.append(opt7);
+        //
+        //            }
+        //
+        //            if (list[2].selected == true) {
+        //
+        //                l2.length = 0;
+        //                l3.length = 0;
+        //
+        //                var p = "LENOVO";
+        //                var opt = document.createElement("option");
+        //                opt.text = p;
+        //                opt.value = p;
+        //                l2.append(opt);
+        //
+        //                var q = "DELL";
+        //                var opt1 = document.createElement("option");
+        //                opt1.text = q;
+        //                opt1.value = q;
+        //                l2.append(opt1);
+        //
+        //                var r = "ASUS ROG";
+        //                var opt2 = document.createElement("option");
+        //                opt2.text = r;
+        //                opt2.value = r;
+        //                l2.append(opt2);
+        //
+        //                var s = "HP";
+        //                var opt3 = document.createElement("option");
+        //                opt3.text = s;
+        //                opt3.value = s;
+        //                l2.append(opt3);
+        //
+        //                var u = 50000;
+        //                var opt4 = document.createElement("option");
+        //                opt4.text = u;
+        //                opt4.value = u;
+        //                l3.append(opt4);
+        //
+        //                var v = 53000;
+        //                var opt5 = document.createElement("option");
+        //                opt5.text = v;
+        //                opt5.value = v;
+        //                l3.append(opt5);
+        //
+        //                var w = 78000;
+        //                var opt6 = document.createElement("option");
+        //                opt6.text = w;
+        //                opt6.value = w;
+        //                l3.append(opt6);
+        //
+        //                var x = 42500;
+        //                var opt7 = document.createElement("option");
+        //                opt7.text = x;
+        //                opt7.value = x;
+        //                l3.append(opt7);
+        //
+        //            }
+        //        }
+        function dofillitems(product) {
+
+            var lapA = ["dell", "hp", "lenovo", "asus rog"];
+            var pricesAL = ["50000", "45000", "47000", "60000"];
+
+            var mobsA = ["vivo", "oppo", "samsung", "mi"];
+            var pricesAM = ["5000", "4500", "9000", "15000"];
+
+            var items = document.getElementById("list2");
+            var prices = document.getElementById("list3");
+
+            items.disabled = false;
+            prices.disabled = false;
+
+            items.length = 0;
+            prices.length = 0;
+
+            if (product == "laptop") {
+
+
+
+                for (i = 0; i < lapA.length; i++) {
+                    var optionI = document.createElement("option");
+                    var optionP = document.createElement("option");
+                    optionI.text = lapA[i];
+                    optionI.value = lapA[i];
+
+                    optionP.text = pricesAL[i];
+                    optionP.value = pricesAL[i];
+
+                    items.append(optionI);
+                    prices.append(optionP);
+                }
+            }
+            
+            if (product == "mobile") {
+
+
+
+                for (i = 0; i < mobsA.length; i++) {
+                    var optionL = document.createElement("option");
+                    var optionM = document.createElement("option");
+                    optionL.text = mobsA[i];
+                    optionL.value = mobsA[i];
+
+                    optionM.text = pricesAM[i];
+                    optionM.value = pricesAM[i];
+
+                    items.append(optionL);
+                    prices.append(optionM);
+                }
+            }
+
+        }
+
+        function doselect() {
+
+
+            var list = document.getElementById("list2");
+            var list1 = document.getElementById("list4");
+            var ll = document.getElementById("list5");
+            var l = document.getElementById("list3");
+
+            if (ll[0].value == "none")
+                ll.remove(0);
+            if (list1[0].value == "none")
+                list1.remove(0);
+            for (i = 0; i < list.length; i++) {
+                if (list[i].selected == true) {
+                    l[i].selected = true;
+                    var opt7 = document.createElement("option");
+                    var p = list[i].value;
+                    opt7.text = p;
+                    opt7.value = p;
+                    list1.append(opt7);
+                }
+            }
+            for (j = 0; j < l.length; j++) {
+                if (l[j].selected == true) {
+                    var opt6 = document.createElement("option");
+                    var m = l[j].value;
+                    opt6.text = m;
+                    opt6.value = m;
+                    ll.append(opt6);
+                }
+                l[j].selected = false;
+            }
+        }
+
+        function doremove(list) {
+            var sindex = list.selectedIndex;
+            var refCart = document.getElementById("list5");
+            var resp = confirm("sure?");
+            if (resp == true) {
+                list.remove(sindex);
+                refCart.remove(sindex);
+            }
+        }
+
+        function dobill() {
+            var a = (document.getElementById("list5"));
+            var total = 0;
+
+            for (i = 0; i < a.length; i++) {
+                total += parseFloat(a[i].value);
+            }
+            document.getElementById("box").value = total;
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+
+        <h3>LIST COMBO ASSIGNMENT</h3>
+
+        <table width="500">
+
+            <tr>
+                <td align="center">
+                    category of items:
+                    <select id="list1" onchange="dofillitems(this.value);">
+                        <option value="none">select</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="laptop">Laptop</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table width="500" cellspacing="60">
+                        <tr>
+                            <td>
+                                types:
+                                <select disabled multiple id="list2" onchange="doselect();">
+                                    <option value="none">none</option>
+                                </select>
+                            </td>
+                            <td align="end">
+                                price in Rs. :
+                                <select disabled multiple id="list3">
+                                    <option value="none">none</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table width="500" cellspacing="60">
+                        <tr>
+                            <td>
+                                cart:
+                                <select size="4" id="list4" ondblclick="doremove(this);">
+                                    <option value="none">none</option>
+                                </select>
+                            </td>
+                            <td align="end">
+                                price in Rs. :
+                                <select size="4" id="list5">
+                                    <option value="none">none</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center"><button onclick="dobill();">Bill</button></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table width="500">
+                        <tr>
+                            <td align="center"><input type="text" id="box" readonly></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+
+
+
+
+
+    </center>
+</body></html>

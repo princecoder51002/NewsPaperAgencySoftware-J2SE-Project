@@ -1,0 +1,288 @@
+* {
+    margin: 0px;
+}
+
+body {
+    background-color: white;
+}
+
+#outer {
+    width: 1200px;
+    height: 750px;
+    background-color: white;
+    margin: auto;
+}
+
+#title {
+    width: inherit;
+    height: 50px;
+    position: fixed;
+}
+
+#p2 {
+    font-family: monospace;
+    font-size: 20px;
+    margin-left: 10px;
+    float: left;
+    margin-top: 27px;
+}
+
+#p1 {
+    width: 30px;
+    height: 30px;
+    background-image: url(../pics/33b869f90619e81763dbf1fccc896d8d.jpg);
+    float: left;
+    margin-top: 20px;
+}
+
+#p3 {
+    width: 200px;
+    height: inherit;
+    float: left;
+    margin-left: 860px;
+}
+
+
+#p3 ul {
+    width: 200px;
+    height: 30px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+#p3 li {
+    float: left;
+    margin-left: 15px;
+    background-color: lightcoral;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+#p4 {
+    float: left;
+    width: 600px;
+    height: inherit;
+    margin-left: 200px;
+    /*    background-color: black;*/
+    margin-top: -40px;
+}
+
+#p4 ul {
+    width: 600px;
+    height: 30px;
+    list-style: none;
+    float: left;
+}
+
+#p4 li {
+    float: left;
+    margin-left: 15px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#p4 li:hover {
+    background-color: black;
+    color: white;
+}
+
+#mainbody {
+    width: inherit;
+    height: 300px;
+    float: left;
+    margin-top: 80px;
+
+}
+
+#table1 {
+    width: 700px;
+    height: inherit;
+    float: left;
+    margin-left: 100px;
+    float: left;
+
+}
+
+#pic1 {
+    width: 500px;
+    height: 250px;
+    background-image: url(../pics/gallery-black-wall-with-focus-spotlights-background_1017-23787.jpg);
+    margin-left: 600px;
+    margin-top: 30px;
+}
+
+#start {
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    float: left;
+    margin-left: 500px;
+    margin-top: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.uu {
+    font-family: cursive;
+    font-size: 20px;
+    color: white;
+    margin-left: 35px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    text-align: center;
+    float: left;
+}
+
+.uu:hover {
+    color: white;
+}
+
+#start:hover {
+    background-color: black;
+}
+
+#start:active {
+    transform: translate(0px, 5px);
+}
+
+#x {
+    width: inherit;
+    height: 300px;
+    float: left;
+    padding-top: 20px;
+}
+
+#x1 {
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 50px;
+    border: 2px grey solid;
+    border-radius: 20px;
+}
+
+#x2 {
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    border: 2px grey solid;
+    border-radius: 20px;
+}
+
+#x3 {
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    border: 2px grey solid;
+    border-radius: 20px;
+}
+
+#x11 {
+    width: 70px;
+    height: 70px;
+    background-color: dodgerblue;
+    float: left;
+    background-image: url(../pics/foreigner-model-shoot-500x500.jpg);
+    border-radius: 50%;
+}
+
+#x12 {
+    width: 70px;
+    height: 30px;
+    float: left;
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+#x13 {
+    width: 60px;
+    height: 70px;
+    background-color: deeppink;
+    float: left;
+    background-image: url(../pics/depositphotos_3763236-stock-photo-gold-star.jpg);
+}
+
+#x14 {
+    width: inherit;
+    height: 130px;
+    float: left;
+}
+
+.ppp {
+    font-size: 20px;
+    font-family: cursive;
+    margin-left: 20px;
+}
+
+#x21 {
+    width: 70px;
+    height: 70px;
+    background-color: dodgerblue;
+    float: left;
+    background-image: url(../pics/5184.jpg);
+    border-radius: 50%;
+
+}
+
+#x22 {
+    width: 70px;
+    height: 30px;
+    float: left;
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+#x23 {
+    width: 60px;
+    height: 70px;
+    background-color: deeppink;
+    float: left;
+    background-image: url(../pics/depositphotos_3763236-stock-photo-gold-star.jpg);
+}
+
+#x24 {
+    width: inherit;
+    height: 130px;
+    float: left;
+}
+
+#x31 {
+    width: 70px;
+    height: 70px;
+    background-color: dodgerblue;
+    float: left;
+    background-image: url(../pics/oscar-isaac-a-foreigner.jpg);
+    border-radius: 50%;
+}
+
+#x32 {
+    width: 70px;
+    height: 30px;
+    float: left;
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+#x33 {
+    width: 60px;
+    height: 70px;
+    background-color: deeppink;
+    float: left;
+    background-image: url(../pics/depositphotos_3763236-stock-photo-gold-star.jpg);
+}
+
+#x34 {
+    width: inherit;
+    height: 130px;
+    float: left;
+}

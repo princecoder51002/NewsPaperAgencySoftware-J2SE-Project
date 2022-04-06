@@ -1,0 +1,169 @@
+<html>
+
+<head>
+    <title>
+
+        welcome to prince web.....
+
+
+
+    </title>
+</head>
+
+<body bgcolor="white">
+    <center>
+        <font size="9" color="black"> learning web development </font>
+    </center>
+
+
+
+    <marquee bgcolor="red" behavior="alternate" scrollamount="10" direction="left" scroll delay="200">
+        <font size="10">
+            PRINCE WADHWA
+        </font>
+    </marquee>
+    <marquee bgcolor="yellow" behavior="slide" direction="right" scrollamount="10" scroll delay="200">
+        <font size="8">
+            WADHWA SALES CORPORATIONS
+        </font>
+    </marquee>
+
+    <hr>
+
+    <marquee>
+        <img src="pics/downlo0(1).jfif" width="500" height="300" alt="no pic here">
+        <img src="pics/download%20(1)h.jfif" title="mountains" width="500" height="300" alt="no pic here">
+        <img src="pics/download%20(2).jfif" title="mountains" width="500" height="300" alt="no pic here">
+        <img src="pics/download%20(3).jfif" title="mountains" width="500" height="300" alt="no pic here">
+    </marquee>
+    <hr>
+    <font size="7">
+        1. program for displaying circularly linked list
+    </font>
+    <pre>
+<font size="4">
+    #include <stdio.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+} *head = NULL;
+
+int main()
+{
+    int n, i;
+    printf("enter number of elements: \n");
+    scanf("%d", &amp;n);
+    int a[n];
+    for (i = 0; i &lt; n; i++)
+    {
+        scanf("%d", &amp;a[i]);
+    }
+    void create(int a[], int n);
+    void display(struct node * p);
+    void rdisplay(struct node * p);
+    create(a, n);
+    display(head);
+    printf("\n");
+    rdisplay(head);
+}
+void create(int a[], int n)
+{
+    int i;
+    struct node *t, *last;
+    head = (struct node *)malloc(sizeof(struct node));
+    head->data = a[0];
+    head->next = head;
+    last = head;
+    for (i = 1; i < n; i++)
+    {
+        t = (struct node *)malloc(sizeof(struct node));
+        t->data = a[i];
+        t->next = last->next;
+        last->next = t;
+        last = t;
+    }
+}
+void display(struct node *p)
+{
+    do
+    {
+        printf("%d ", p->data);
+        p = p->next;
+    } while (p != head);
+}
+void rdisplay(struct node *p)
+{
+    static int flag = 0;
+    if (p != head || flag == 0)
+    {
+        flag = 1;
+        printf("%d ", p->data);
+        rdisplay(p->next);
+    }
+    flag = 0;
+}
+</font>
+   </pre>
+    <hr>
+    <p>
+
+        The problem with that approach is the sentiment that, given sufficient effort, you can eliminate errors when, in fact, failure is the default state of software. And when software fails, the better that users, support people, and developers understand what actually happened, the more effectively they can address the underlying problem
+    </p>
+    <hr>
+    <p>
+        The problem with that approach is the sentiment that, given sufficient effort, you can eliminate errors when, in fact, failure is the default state of software. And when software fails, the better that users, support people, and developers understand what actually happened, the more effectively they can address the underlying problem
+    </p>
+    <hr>
+    <hr>
+    <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ET-C1sy2DRM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+    <hr>
+    <hr>
+    <center>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3448.0216865444563!2d74.93501361511896!3d30.207928481823245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1611063079698!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </center>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    @copy;right reserved....
+    hello pragmmers.....<br>
+    best of luck <br>
+
+    <b>
+        bold</b>
+    <br>
+    <i>
+        italic</i>
+
+    <hr> <!-- horizonal line--->
+
+    <u>
+        underline</u>
+
+    <hr width="300" color="red" size="18" align="right">
+    <hr width="300" color="pink" size="18" align="center">
+    <hr width="300" color="purple" size="18" align="left">
+
+    <b>
+        <i>
+            <u>
+
+
+                all in one</u></i></b>
+    <hr>
+    <strike>
+        not availaible</strike>
+    <hr>
+    <h1>sun-soft tenchonologies</h1>
+    <h2>sun-soft tenchonologies</h2>
+    <h3>sun-soft tenchonologies</h3>
+    <h4>sun-soft tenchonologies</h4>
+    <h5>sun-soft tenchonologies</h5>
+    <h6>sun-soft tenchonologies</h6>
+    <hr>
+
+
+</body></html>

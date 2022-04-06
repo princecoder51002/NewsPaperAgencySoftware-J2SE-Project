@@ -1,0 +1,72 @@
+body{
+    background-color: #f0f0f0;
+}
+
+
+#signup{
+    width:400px; height:550px;
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0px 0px 15px 5px gray;
+    padding: 10px;
+    
+/*    ******************************/
+    display:none;
+    position: absolute;
+    left: 35%;
+    top: 0px;
+}
+img{
+    width:200px; height: 150px;
+}
+label{
+    font-family: sans-serif;
+}
+input[type="text"],input[type="password"]{
+    width: 90%;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px;
+    border:0px;
+    border-bottom: 2px red solid;
+    outline: none;
+}
+#cross{
+    background-image: url(../pics/cross-mark-button-emoji-by-google.png);
+    width: 25px; height: 25px;
+    background-size: contain;
+    float: right;
+    cursor: pointer;
+    
+}
+#u{
+    width:100px;
+    height: 35px;
+    background-color: darkmagenta;
+    margin-top: 20px;
+    margin-left: 140px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    
+}
+.uu{
+    margin-left: 16px;
+    font-size: 25px;
+}
+.uidpic{
+    background-image: url(../pics/user-person-single-id-account-player-male-female-512.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+input[type="text"]:focus{
+    background-color:aliceblue;
+}
+input[type="password"]:focus{
+    background-color:aliceblue;
+}
+#u:active{
+   transform: translate(5px,5px);
+}

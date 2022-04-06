@@ -1,0 +1,70 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Document</title>
+    <style type="text/css">
+        .btn {
+            padding: 10px;
+            background-color: darkviolet;
+            color: white;
+            width: 100px;
+            float: left;
+            cursor: pointer;
+            margin-left: 100px;
+            text-align: center;
+
+        }
+
+        .brd {
+            margin-left: 400px;
+            border: 2px white dotted;
+            /*double,dotted,dashed,solid*/
+            background-color: blue;
+            color: white;
+            outline: 0px black solid;
+        }
+
+        .brdr-2 {
+            margin-left: 20px;
+            ;
+            background-color: lightcoral;
+            border-left: 6px black dotted;
+            border-right: 6px black solid;
+        }
+
+        .brdr-3 {
+            margin-left: 20px;
+            ;
+            background-color: lightcoral;
+            border-right: 6px gray solid;
+            border-bottom: 6px gray solid;
+        }
+
+        .brdr-3:hover {
+            margin-left: 20px;
+            ;
+            background-color: lightcoral;
+            border-left: 6px gray solid;
+            border-top: 6px gray solid;
+            border-radius: 20px;
+
+            border-right: 0px gray solid;
+            border-bottom: 0px gray solid;
+        }
+
+        .brd:active {
+            transform: translate(5px, 5px);
+        }
+
+        .brd:hover {
+            border-radius: 20px;
+            transition: ease all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn brd">signup</div>
+    <div class="btn brdr-2">login</div>
+    <div class="btn brdr-3">prince</div>
+</body></html>

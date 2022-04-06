@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function process() {
+            var refj = document.getElementById("chkj");
+            var refw = document.getElementById("chkw");
+            var refc = document.getElementById("chkc");
+
+            var res = "";
+
+            if (refj.checked == true)
+                res = res + refj.value + ",";
+            if (refw.checked == true)
+                res = res + refw.value + ",";
+            if (refc.checked == true)
+                res = res + refc.value + ",";
+
+            document.getElementById("reschk").innerHTML = res.substr(0, res.length - 1);
+
+        }
+
+        function checkall() {
+            var rr = document.getElementById("btr");
+            var refj = document.getElementById("chkj");
+            var refw = document.getElementById("chkw");
+            var refc = document.getElementById("chkc");
+            //            if(rr.checked==true)
+            //                {
+            //                    
+            //                    
+            //                    refj.checked=true;
+            //                     refw.checked=true;
+            //                     refc.checked=true;
+            //                }
+            //            else 
+            //                {
+            //                     refj.checked=false;
+            //                     refw.checked=false;
+            //                     refc.checked=false;
+            //                }
+
+            refc.checked = rr.checked;
+            refw.checked = rr.checked;
+            refj.checked = rr.checked;
+        }
+        
+        
+        function doradio(val)
+        {
+            document.getElementById("resBranch").innerHTML=val;
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+
+        <h3>check box</h3>
+        <p>technical knowledge</p>
+        <br>
+        <input type="checkbox" id="btr" onclick="checkall();"> ALL
+        <br><br>
+        <input type="checkbox" value="java" id="chkj">JAVA
+        <input type="checkbox" value="web development" id="chkw">WEB
+        <input type="checkbox" value="cpp" id="chkc">C++
+        <br><br>
+        <input type="button" value="click" onclick="process();">
+        <br><br>
+        <div id="reschk">*</div>
+        
+        <br><br><br><br><br><br>
+        
+        <h3>radio box</h3>
+        <p>branch</p>
+        
+        <input type="radio" name="pp" value="Computer science" onclick="doradio(this.value);"> CSE
+        <input type="radio" name="pp" value="electronis" onclick="doradio(this.value);"> ECE
+        <br><br><br>
+        
+        <div id="resBranch">*</div>
+
+        <hr>
+        <hr>
+        
+        state: <br>
+        
+
+
+
+
+
+    </center>
+</body></html>

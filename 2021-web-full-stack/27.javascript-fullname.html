@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        function dojoin() {
+            var fn = document.frm.txtfn.value; // value: always return string
+            var ln = document.frm.txtln.value;
+
+            var full = fn + " " + ln;
+            document.frm.txtfull.value = full;
+        }
+
+    </script>
+</head>
+
+<body>
+    <center>
+      <fieldset>
+        <form name="frm">
+
+            <table>
+
+                <tr>
+                    <td>enter f.name</td>
+                    <td><input type="text" autofocus placeholder="enter ur name" name="txtfn"></td>
+                </tr>
+                <tr>
+                    <td>enter last name</td>
+                    <td><input type="text" placeholder="last name" name="txtln"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="join" onclick="dojoin();"></td>
+                    <td><input type="reset" value="reset"></td>
+                </tr>
+
+                <tr>
+                    <td>full name</td>
+                    <td><input type="text" name="txtfull"></td>
+                </tr>
+
+
+
+            </table>
+
+
+
+
+
+        </form>
+
+</fieldset>
+
+
+
+
+
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+
+DATA BASE MANAGEMENT SYSTEM
+
+IT IS DIVIDED INTO TWO PARTS
+
+1. BY CLICK
+
+STEPS: 1.CLICK TO NEW
+       2. CREATE DATABASE(2021-WEB)
+       3. SPACE IS NOT ALLOWED WHILE TYPING
+       4. CREATE A TABLE AMD GIVE A NAME TO IT
+       5. EXAMPLE :- index(primary key)->value cant be repeated thats why primary is used
+                     sname(varchar)->length(30)
+                     percentage(float)
+                     branch(varchar)->length(10)
+                     collegename(varchar)->length(50)
+                     mobile(varchar)->length(10)
+       6. TO INSERT RECORDS (USING INSERT TABLE)->THEN INPUT->THEN CLICK GO
+       7. STRUCTURE IS USED FOR ADDING NEW FEILDS 
+       8. WE CAN ALSO EDIT AND ADD NEW ROWS AND COLUMNS ALSO
+ 
+
+2.  BY WRITING QUERIES
+
+STEPS: 1. GO TO MYSQL
+       create table trainees (rollno int primary key, tname varchar(20), per float, branch varchar(10), mobile varchar(12) )
+
+       2.//Full Insertion
+         insert into trainees values (101, 'Aman', 77.88,'cse','65656575')
+
+       3.//Partial Insertion
+         insert into trainees(rollno,tname,mobile) values(103, 'Raman', '65656575')
+       4.//updation
+       update trainees set per=81.21,branch='cse' where rollno=103
+       update trainees set per=per+5 WHERE per<94
+
+       5.//to delete all records
+         delete from trainees
+
+       6.//delete a record
+         delete from trainees where rollno=103
+
+******************retrieval/Searching/fetching************************
+       7.//Fetching all records
+         select * from trainees
+
+         select * from trainees where branch='cse'
+         select * from trainees where tname='Aman' and branch='cse'
+         SELECT tname,rollno FROM `trainees` where branch='cse'
+
+       8.//for unique values in a column
+         select distinct branch from trainees
+         select max(per) from trainees
+         select max(per) as 'Highest' from trainees where branch='cse'
+       9.//Nested Queries
+          select * from trainees where per=(select max(per) as 'Highest' from trainees where branch='cse')
+
+          select avg(per) as 'Avg', min(per) as 'Min', max(per) as 'Maximum' from trainees 
+
+**************************************************************************
+
+      10.// for searching in  ascending order 
+         select * from employee order by ename
+
+      11.// for searching in descending order
+         select * from employee order by ename desc
+
+      12.// for searching top 2 employee having maximum salary
+         select * from employee order by total desc limit 2
+
+      13.// for searching the employee having maximum salary except who is having highest (limit 1,2----> 1 is used for leaving top)
+         select * from employee order by total desc limit 1,2
+        
+      14.// for searching whose name starts with m
+         select * from employees where ename like 'm%'
+
+      15.// for searching whose name contains m
+      select * from employees where ename like '%m%'
+      
+      16.// for searching a name having 4 letters
+         select * from employees where ename like '____'
+
+      17. // for searching a name ends with m
+          select * from employees where ename like '%m'
+
+      18.// for searching a name having m on 3rd position
+         select * from employees where ename like '__m%'
+
+      19.// for current date and time
+         create table library (book varchar(20), doi date,dor date, toi time)
+         insert into library values('real java', CURRENT_DATE(), Date_add(current_date(), interval 5 day) ,CURRENT_TIME())
+
+      20.// to check the difference between date of issue and date of return
+         SELECT datediff(dor,doi) as 'diff in days' from library
+      

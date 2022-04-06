@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .btn {
+            padding: 10px;
+            cursor: pointer;
+            width: 50px;
+            background-color: purple;
+            color: white;
+        }
+
+        .err {
+            color: gray;
+            font-family: cursive;
+            float: right;
+            margin-top: 10px;
+        }
+
+        .ok {
+            color: green;
+            width: 20px;
+            height: 20px;
+            background-image: url(pics/cff7e1ebee79e35082485a90dc88bc71.jpg);
+            background-size: contain;
+        }
+
+        .not-ok {
+            color: red;
+            width: 20px;
+            height: 20px;
+            background-image: url(pics/102514062-wrong-cross-symbol-isolated.jpg);
+            background-size: contain;
+        }
+
+        .nhisahi {
+            color: red;
+            float: right;
+        }
+
+        .sahihai {
+            color: green;
+            float: right;
+        }
+
+        .thkhai {
+            color: blueviolet;
+            float: right;
+        }
+
+        .phone {
+            color: red;
+            float: right;
+        }
+
+        .phone1 {
+            color: green;
+            float: right;
+        }
+    </style>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="javascript/jquery-1.8.2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#dosignup").click(function() {
+                $("#signup").show(1000);
+                //            $("#signup").slideDown(1000);
+                //              $("#signup").fadeIn(1000);  
+                //            $("#signup").slideToggle(); // appear and return back on click
+                //            $("#signup").fadeToggle(1000);
+
+            });
+
+            //-------------------------------------------
+
+            $("#cross").click(function() {
+                $("#signup").hide(1000);
+                //            $("#signup").fadeOut(1000);
+                //            $("#signup").slideUp(1000);
+            });
+
+            //-------------------------------
+
+            $("#txtuid").blur(function() {
+                var uid = $(this).val();
+                var regExp=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                if (uid.length == 0) {
+                    $("#erruid").html("").removeClass("ok").addClass("not-ok");
+                }
+                else if(regExp.test(uid)==false){
+                    $("#erruid").html("").removeClass("ok").addClass("not-ok");
+                    alert("Invalid email ID")
+                }
+                
+                else {
+                    $("#erruid").html("").removeClass("not-ok").addClass("ok");
+                }
+            });
+
+            //----------------------------
+
+            //        $(".fa").click(function(){
+            //            if($(this).hasClass("fa-eye-slash"))
+            //                {
+            //                    $(this).removeClass("fa fa-eye-slash").addClass("fa fa-eye");
+            //                    $("#txtpwd").attr("type","text");
+            //                }
+            //            else 
+            //                {
+            //                    $(this).removeClass("fa fa-eye").addClass("fa fa-eye-slash");
+            //                    $("#txtpwd").attr("type","password");
+            //                }
+            //        });
+
+            $(".fa").mousedown(function() {
+
+                $(this).removeClass("fa fa-eye-slash").addClass("fa fa-eye");
+                $("#txtpwd").prop("type", "text");
+            });
+
+            $(".fa").mouseup(function() {
+                $(this).removeClass("fa fa-eye").addClass("fa fa-eye-slash");
+                $("#txtpwd").attr("type", "password");
+            });
+
+            //-----------------------------------------
+
+            $("#txtpwd").keyup(function() {
+                var pwd = $(this).val();
+                var r=/(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+                if (pwd.length < 4)
+                    $("#pass").html("must contain 4 characters").addClass("nhisahi").removeClass("thkhai sahihai").fadeOut(5000);
+                else if (pwd.length >= 4 && pwd.length <= 8) {
+                    $("#pass").html("normal").addClass("thkhai").removeClass("nhishai sahihai").fadeOut(5000);
+                } else if (pwd.length > 8) {
+                    $("#pass").html("excellent").addClass("sahihai").removeClass("thkhai nhishai").fadeOut(5000);
+                }
+                if(r.test(pwd)==false)
+					$("#pass").html("Invalid Password");
+				else
+					{
+						$("#pass").html("Perfect Password");	
+					}
+            });
+
+            //--------------------------------------------
+
+            $("#mobile").blur(function() {
+                var mob = $(this).val();
+                var r=/^[7-9]{1}[0-9]{9}$/;
+				if(r.test(mob)==true)
+					alert("valid");
+				else
+					alert("Invalid");
+                
+                
+                if (mob.length < 10 || mob.length > 10) {
+                    $("#mobi").html("must be 10 digits").addClass("phone").removeClass("phone1").fadeOut(5000);
+                } else if (mob.length == 10) {
+                    $("#mobi").html("good job").removeClass("phone").addClass("phone1").fadeOut(5000);
+                }
+                
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!--    body*************************body-->
+
+    <div id="signup">
+        <div id="cross"></div>
+        <table border="0" width="100%">
+            <tr>
+                <td align="center">
+                    <img src="pics/amazon-summer-sale-check-out-some-last-minute-deals.jpg" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>user id</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" autofocus placeholder="user id" class="uidpic" id=txtuid>
+                    <div id="erruid" class="err">*</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>password</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="enter password" id="txtpwd"><i class="fa fa-eye-slash" aria-hidden="true"></i>
+                    <span id="pass">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Mobile no.</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="enter your mobile no." maxlength="10" id="mobile">
+                    <span id="mobi"></span>
+                </td>
+            </tr>
+        </table>
+        <div id="u"><span class="uu">sign up</span></div>
+    </div>
+
+
+    <!--    buttons-->
+    <center>
+        <div id="dosignup" class="btn">sign up</div>
+
+    </center>
+
+</body></html>

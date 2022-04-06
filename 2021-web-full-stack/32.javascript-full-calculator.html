@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style type="text/css">
+        .container {
+            width: 300px;
+            height: 300px;
+            background-color: #f0f0f0;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+
+        }
+        input[type="text"] {
+            text-align: end;
+        }
+
+        .bt {
+            width: inherit;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            float: left;
+        }
+
+        .uu {
+            width: 200px;
+            height: inherit;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .up {
+            width: 100px;
+            height: inherit;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+
+        .ml {
+            width: 50px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .pp {
+            width: 100px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .ml:hover {
+            box-shadow: 0px 0px 15px 5px gray;
+        }
+
+        .pp:hover {
+            box-shadow: 0px 0px 15px 5px gray;
+        }
+    </style>
+
+
+    <script>
+        function put(reftxt) {
+            document.getElementById("result").value += reftxt;
+        }
+
+        function doclear() {
+            document.getElementById("result").value = "";
+        }
+
+        function backspace() {
+            var p = document.getElementById("result").value;
+            document.getElementById("result").value = p.substr(0, p.length - 1);
+        }
+
+        function calculation() {
+            var a = document.getElementById("result").value;
+
+            var b = eval(a);
+
+            document.getElementById("result").value = b;
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="bt">
+            <div class="uu">
+                <input type="text" autofocus id="result">
+            </div>
+            <div class="up">
+                <input type="button" value="clear" class="ml" onclick="doclear();">
+            </div>
+        </div>
+
+        <div class="bt">
+            <div class="uu"><input type="button" value="1" class="ml" onclick="put(this.value);">
+                <input type="button" value="2" class="ml" onclick="put(this.value);">
+                <input type="button" value="3" class="ml" onclick="put(this.value);">
+            </div>
+            <div class="up"><input type="button" value="*" class="ml" onclick="put(this.value);"></div>
+        </div>
+        <div class="bt">
+            <div class="uu"><input type="button" value="4" class="ml" onclick="put(this.value);">
+                <input type="button" value="5" class="ml" onclick="put(this.value);">
+                <input type="button" value="6" class="ml" onclick="put(this.value);">
+            </div>
+            <div class="up"><input type="button" value="-" class="ml" onclick="put(this.value);"></div>
+        </div>
+        <div class="bt">
+            <div class="uu"><input type="button" value="7" class="ml" onclick="put(this.value);">
+                <input type="button" value="8" class="ml" onclick="put(this.value);">
+                <input type="button" value="9" class="ml" onclick="put(this.value);">
+            </div>
+            <div class="up"><input type="button" value="+" class="ml" onclick="put(this.value);"></div>
+        </div>
+        <div class="bt">
+            <div class="uu"><input type="button" value="0" class="ml" id="txt0">
+                <input type="button" value="." class="ml" id="txt.">
+                <input type="button" value="<<<" class="ml" onclick="backspace();">
+            </div>
+            <div class="up"><input type="button" value="/" class="ml" onclick="put(this.value);"></div>
+        </div>
+        <div class="bt">
+            <div class="uu"><input type="button" value="=" class="pp" onclick="calculation();"></div>
+            <div class="up"><input type="button" value="%" class="ml" onclick="put(this.value);"></div>
+        </div>
+    </div>
+
+
+</body></html>

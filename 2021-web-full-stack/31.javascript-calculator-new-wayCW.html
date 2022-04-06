@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script>
+    
+    function chkAll(txtRef,errId)
+        {
+            var value=txtRef.value;
+            if(value=="")
+                {
+                    errId.innerHTML="fill the value";
+                    txtRef.style.background="yellow";
+                }
+            else if(isNaN(value)==true)
+                {
+                    errId.innerHTML="fill numeric value plz";
+                    txtRef.style.background="yellow";
+                }
+            else 
+                {
+                    errId.innerHTML="good";
+                    txtRef.style.background="pink";
+                }
+        }
+        
+        function doSum()
+		{
+			var refA=document.getElementById("txtA");
+			var refB=document.getElementById("txtB");
+//			
+//			if(refA.style.backgroundColor=="yellow" || refB.style.backgroundColor=="yellow")
+//				{
+//					alert("Fill Valid Data");
+//					return;
+//				}
+			
+			var sva=refA.value;
+			var svb=refB.value;
+					
+			var va =parseFloat(sva);
+			var vb =parseFloat(svb);
+			var sum=va+vb;
+			if(isNaN(sum)==true)
+				{
+					alert("Fill Valid Data");
+					return;
+				}
+			document.getElementById("txtResult").value=sum;
+			
+			document.querySelector("#btnPer").disabled=false;
+		}
+    
+    function doPer()
+		{
+			var sum=document.querySelector("#txtResult").value;
+			var per=sum*100/200;
+			alert(per);
+			
+		}
+        
+        function doClear()
+		{
+			document.getElementById("txtResult").value="";//empty string
+			document.getElementById("txtA").value="";
+			document.getElementById("txtB").value="";
+			document.querySelector("#btnPer").disabled=true;
+
+		}
+    </script>
+</head>
+<body>
+    
+    <center>
+        
+ <form>
+            
+           
+           Enter A: <input type="text" autofocus id="txtA"  onBlur="chkAll(txtA,errA);">
+		 <span id="errA">*</span>
+			 <br><br>
+			enter B : <input type="text" id="txtB"  onBlur="chkAll(this,errB);"> 
+			<span id="errB">*</span>
+			<br> <br>
+			<input type="button" value="sum" onclick="doSum();">
+			<input type="button" value="per" onclick="doPer();" disabled id="btnPer">
+			
+			<input type="button" value="Clear All" onclick="doClear();">
+			
+			  <br><br>
+			Result: <input type="text" id="txtResult">
+           
+           
+           
+            
+        </form>
+        
+        
+        
+        
+    </center>
+    
+    
+</body>
+</html>

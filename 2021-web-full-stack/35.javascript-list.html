@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        function doshowselected() {
+            //            a list box is an array of string
+            var list = document.getElementById("techs");
+            var txt = document.getElementById("texttech");
+            var i;
+            var all = "";
+            for (i = 0; i < list.length; i++) {
+                if (list[i].selected == true) {
+                    all = all + list[i].value + "\n";
+                }
+            }
+            txt.value = all;
+        }
+
+        function doselectall() {
+            var list = document.getElementById("techs");
+            var i;
+
+            for (i = 1; i < list.length; i++) {
+                list[i].selected = true;
+            }
+        }
+
+        function dotechclick() {
+            var list = document.getElementById("techs");
+            var txt = document.getElementById("texttech");
+
+            txt.value += list.value + ",";
+        }
+
+        function doremove(list) {
+            var sindex = list.selectedIndex;
+            var resp = confirm("sure?");
+            if (resp == true)
+                list.remove(sindex);
+        }
+
+    </script>
+</head>
+
+<body>
+    <center>
+
+        select technologies u know: <br><br>
+        <select id="techs" size="4" multiple onchange="dotechclick();" ondblclick="doremove(this);">
+            <option value="none" disabled>select</option>
+            <option value="cpp">c++</option>
+            <option value="java">java</option>
+            <option value="web development">web</option>
+        </select>
+        <br><br>
+        <button onclick="doshowselected();">show selected</button>
+        <button onclick="doselectall();">select All</button>
+        <br><br>
+        selected technologies:
+        <br><textarea readonly rows="6" cols="15" id="texttech"></textarea>
+
+
+
+    </center>
+</body>
+
+</html>

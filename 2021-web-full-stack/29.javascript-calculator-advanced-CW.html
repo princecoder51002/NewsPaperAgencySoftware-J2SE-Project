@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    
+    <script>
+    
+    function dosum()
+        {
+            var sva=document.getElementById("txta").value;
+            var svb=document.getElementById("txtb").value;
+            
+//            if(sva=="" || svb.length==0)
+//                {
+//                    alert("fill the value plz...");
+//                    return;
+//                }
+//            else if(isNaN(sva)==true || isNaN(svb)==true)
+//                {
+//                    alert("enter numeric value...");
+//                    return;
+//                }
+            
+            
+            var va=parseFloat(sva);
+            var vb=parseFloat(svb);
+            var sum= va+vb;
+            document.getElementById("txtresult").value=sum;
+        }
+        
+        function doclear()
+        {
+            document.getElementById("txtresult").value=""; // empty string
+            document.getElementById("txta").value="";
+            document.getElementById("txtb").value="";
+        }
+        
+        function chkA()
+        {
+            var ref=document.getElementById("txta");
+            var sva=ref.value;
+            
+            if(sva=="")
+                {
+//                    alert("its khaaliiii...");
+//                    ref.style.backgroundColor="red";
+                    ref.focus();
+                    document.getElementById("pp").innerHTML="fill the value plz";
+                }
+            else if(isNaN(sva)==true)
+                {
+//                    alert("fill numeric value...");
+                    ref.style.backgroundColor="#f4c2c2";
+				    ref.focus();
+                    document.getElementById("pp").innerHTML="fill the numeric value";
+                }
+            else if(sva>100)
+                {
+//                    alert("must be<100..");
+                    ref.style.backgroundColor="#f4c2c2";
+						ref.focus();
+                    document.getElementById("pp").innerHTML="must be <100";
+                }
+            
+            else 
+                {
+                    ref.style.backgroundColor="green";
+                    document.getElementById("pp").innerHTML="good job...";
+                }
+        }
+    
+    
+    
+    
+    </script>
+</head>
+<body>
+    <center>
+        
+        <form>
+            
+            enter A: <input type="text" autofocus id="txta" onBlur="chkA();">
+            <span id="pp"></span>
+            <br><br>
+            enter B: <input type="text" id="txtb">
+            <br><br>
+            
+            <input type="button" value="sum" onclick="dosum();">
+            <input type="button" value="clear all" onclick="doclear();">
+            
+            <br><br>
+            
+            result: <input type="text" id="txtresult">
+            
+            
+        </form>
+        
+        
+        
+        
+    </center>
+</body>
+</html>

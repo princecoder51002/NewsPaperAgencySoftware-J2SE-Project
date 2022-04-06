@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+    <script type="text/javascript">
+        function chkac() {
+            var ac = document.getElementById("aca");
+
+            if (ac.checked == true)
+                document.getElementById("ac").disabled = false;
+            else
+                document.getElementById("ac").disabled = true;
+        }
+
+        function chkcoo() {
+            var ac = document.getElementById("coo");
+
+            if (ac.checked == true)
+                document.getElementById("cooler").disabled = false;
+            else
+                document.getElementById("coo").disabled = true;
+        }
+
+        function chkfan() {
+            var ac = document.getElementById("fa");
+
+            if (ac.checked == true)
+                document.getElementById("fan").disabled = false;
+            else
+                document.getElementById("fan").disabled = true;
+        }
+
+        function bill() {
+            var aa = parseInt(document.getElementById("unc").value);
+            var bb = parseInt(document.getElementById("ac").value);
+            var cc = parseInt(document.getElementById("cooler").value);
+            var dd = parseInt(document.getElementById("fan").value);
+            var a = 100;
+            var b = 70;
+            var c = 50;
+            var d = 5;
+
+            document.getElementById("acb").value = a * bb;
+            document.getElementById("cool").value = b * cc;
+            document.getElementById("poo").value = c * dd;
+            document.getElementById("un").value = d * aa;
+
+
+
+            var ap = document.getElementById("aca");
+            var ab = document.getElementById("coo");
+            var ac = document.getElementById("fa");
+
+            if (ap.checked == false) {
+                document.getElementById("acb").value = "0";
+            }
+            if (ab.checked == false) {
+                document.getElementById("cool").value = "0";
+            }
+            if (ac.checked == false) {
+                document.getElementById("poo").value = "0";
+            }
+            var m = parseInt(document.getElementById("acb").value);
+            var n = parseInt(document.getElementById("cool").value);
+            var l = parseInt(document.getElementById("poo").value);
+            var tt = m + n + l + (aa * d);
+            document.getElementById("tb").value = tt;
+
+            document.getElementById("rfg").disabled = false;
+
+        }
+
+        function discount() {
+            var a = parseInt(document.getElementById("tb").value);
+
+            if (rad1.checked == true) {
+                var t = (a) * (1 / 10);
+
+                document.getElementById("dis").value = t;
+            }
+
+            if (rad2.checked == true) {
+                var m = (a) * (2 / 10);
+                document.getElementById("dis").value = m;
+
+
+            }
+
+            document.getElementById("ff").disabled = false;
+        }
+
+        function donet() {
+            var tb = parseFloat(document.getElementById("tb").value);
+            var dt = parseFloat(document.getElementById("dis").value);
+
+            var nt = tb - dt;
+
+            document.getElementById("net").value = nt;
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <center>
+
+        <table width="600">
+
+            <tr height="50">
+                <td align="center">units consumed <input type="text" id="unc"></td>
+            </tr>
+            <tr height="50">
+                <table height="50" width="100%" cellspacing="10">
+                    <tr>
+                        <td align="end"><input type="checkbox" id="aca" onclick="chkac();">AC</td>
+                        <td align="center"><input type="checkbox" id="coo" onclick="chkcoo();">COOLER</td>
+                        <td align="start"><input type="checkbox" id="fa" onclick="chkfan();">FAN</td>
+                    </tr>
+                    <tr>
+                        <td align="end"><input type="text" disabled id="ac"></td>
+                        <td align="center"><input type="text" disabled id="cooler"></td>
+                        <td align="start"><input type="text" disabled id="fan"></td>
+                    </tr>
+
+                    <tr height="70">
+                        <table height="70" width="100%" cellspacing="10">
+                            <tr>
+                                <td align="end"><input type="radio" name="pp" id="rad1">commercial(10%)</td>
+                                <td align="start"><input type="radio" name="pp" id="rad2">residential(20%)</td>
+                            </tr>
+                        </table>
+                    </tr>
+
+                    <tr height="50">
+                        <table height="50" width="100%">
+                            <tr>
+
+                                <td align="end"><input type="button" value="bill" onclick="bill();"></td>
+                                <td align="center"><input type="button" value="discount" disabled id="rfg" onclick="discount();"></td>
+                                <td align="start"><input type="button" value="net" disabled id="ff" onclick="donet();"></td>
+                            </tr>
+
+                        </table>
+
+                    </tr>
+
+                    <tr height="50">
+                        <table height="50" width="100%">
+                            <tr>
+                                <td align="end">AC bill</td>
+                                <td align="center">COOLER bill</td>
+                                <td align="start">FAN bill</td>
+                            </tr>
+                            <tr>
+                                <td align="end"><input type="text" id="acb"></td>
+                                <td align="center"><input type="text" id="cool"></td>
+                                <td align="start"><input type="text" id="poo"></td>
+                            </tr>
+
+                        </table>
+                    </tr>
+                    <tr height="50">
+                        <table height="50" width="100%" cellspacing="20">
+                            <tr>
+                                <td align="center">units bill<input type="text" id="un"></td>
+                                <td align="center">total bill <input type="text" id="tb"></td>
+                            </tr>
+                        </table>
+
+                    </tr>
+
+                    <tr height="50">
+                        <table height="50" width="100%" cellspacing="30">
+                            <td align="center">discount <input type="text" id="dis"></td>
+                            <td align="center">net-bill <input type="text" id="net"></td>
+                        </table>
+                    </tr>
+
+                </table>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+    </center>
+</body></html>

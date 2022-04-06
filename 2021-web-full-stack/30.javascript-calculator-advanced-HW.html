@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+
+    <style type="text/css">
+        fieldset {
+            width: 400px;
+            ;
+            padding: 20px;
+        }
+
+        legend {
+            padding: 5px;
+            background-color: purple;
+            color: white;
+    </style>
+
+    <script>
+        function total() {
+
+            var ref = document.getElementById("txtcpp");
+            var ref1 = document.getElementById("txtjava");
+            var ref2 = document.getElementById("txtweb");
+            var cpp = ref.value;
+            var java = ref1.value;
+            var web = ref2.value;
+
+            var cp = parseFloat(cpp);
+            var ja = parseFloat(java);
+            var w = parseFloat(web);
+
+            var t = cp + ja + w;
+
+            document.getElementById("txttotal").value = t;
+        }
+
+
+        function doper() {
+
+            var ref = document.getElementById("txtcpp");
+            var ref1 = document.getElementById("txtjava");
+            var ref2 = document.getElementById("txtweb");
+            var cpp = ref.value;
+            var java = ref1.value;
+            var web = ref2.value;
+
+            var cp = parseFloat(cpp);
+            var ja = parseFloat(java);
+            var w = parseFloat(web);
+
+            var t = (cp + ja + w) / 300 * 100;
+
+            document.getElementById("txtper").value = t.toFixed(2);
+        }
+
+        function ne() {
+            var ref = document.getElementById("txtcpp");
+            var ref1 = document.getElementById("txtjava");
+            var ref2 = document.getElementById("txtweb");
+
+            ref.value = "";
+            ref1.value = "";
+            ref2.value = "";
+
+            document.getElementById("txtper").value = "";
+            document.getElementById("txttotal").value = "";
+            document.getElementById("yaar").value = "";
+
+        }
+
+        function chkcpp() {
+            var ref = document.getElementById("txtcpp");
+
+            var cp = (ref.value);
+
+            if (cp == "") {
+                ref.style.backgroundColor = "#f4c2c2";
+                document.getElementById("pp").innerHTML = "fill the value plz";
+                
+            } else if (isNaN(cp) == true) {
+                ref.style.backgroundColor = "#f4c2c2";
+                
+                document.getElementById("pp").innerHTML = "fill the numeric value";
+                
+            } else if (cp > 100) {
+                ref.style.backgroundColor = "#f4c2c2";
+                
+                document.getElementById("pp").innerHTML = "must be <100";
+            }
+            else if(isNaN(cp)==false || cp<100)
+                {
+                      document.getElementById("pp").innerHTML = "";
+                }
+
+        }
+
+
+        function chkjava() {
+            var ref = document.getElementById("txtjava");
+
+            var cp = (ref.value);
+
+            if (cp == "") {
+                ref.style.backgroundColor = "#f4c2c2";
+                document.getElementById("ppp").innerHTML = "fill the value plz";
+            
+            } else if (isNaN(cp) == true) {
+                ref.style.backgroundColor = "#f4c2c2";
+            
+                document.getElementById("ppp").innerHTML = "fill the numeric value";
+            } else if (cp > 100) {
+                ref.style.backgroundColor = "#f4c2c2";
+            
+                document.getElementById("ppp").innerHTML = "must be <100";
+            }
+             else if(isNaN(cp)==false || cp<100)
+                {
+                      document.getElementById("pp").innerHTML = "";
+                }
+
+        }
+
+        function chkweb() {
+            var ref = document.getElementById("txtweb");
+
+            var cp = (ref.value);
+
+            if (cp == "") {
+                ref.style.backgroundColor = "#f4c2c2";
+                document.getElementById("pppp").innerHTML = "fill the value plz";
+                
+            } else if (isNaN(cp) == true) {
+                ref.style.backgroundColor = "#f4c2c2";
+                
+                document.getElementById("pppp").innerHTML = "fill the numeric value";
+            } else if (cp > 100) {
+                ref.style.backgroundColor = "#f4c2c2";
+                
+                document.getElementById("pppp").innerHTML = "must be <100";
+            }
+             else if(isNaN(cp)==false || cp<100)
+                {
+                      document.getElementById("pp").innerHTML = "";
+                }
+
+        }
+
+        function dosubmit() {
+            alert("submitted succesfully...");
+        }
+
+        function result() {
+            var ref = document.getElementById("txtcpp");
+            var ref1 = document.getElementById("txtjava");
+            var ref2 = document.getElementById("txtweb");
+            var cpp = ref.value;
+            var java = ref1.value;
+            var web = ref2.value;
+
+            var cp = parseFloat(cpp);
+            var ja = parseFloat(java);
+            var w = parseFloat(web);
+
+            var t = (cp + ja + w) / 300 * 100;
+
+            var vp = "FAIL";
+            var vm = "PASS";
+
+            if (t < 33) {
+                document.getElementById("yaar").value = vp;
+            } else {
+                document.getElementById("yaar").value = vm;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+    <center>
+        <fieldset>
+            <legend> WEB FORM </legend>
+            <form>
+
+                <table>
+
+                    <tr>
+                        <td>CPP</td>
+                        <td><input type="text" id="txtcpp" autofocus onblur="chkcpp();"></td>
+                        <td><span id="pp"></span></td>
+                    </tr>
+                    <tr>
+                        <td>JAVA</td>
+                        <td><input type="text" id="txtjava" onblur="chkjava();"></td>
+                        <td><span id="ppp"></span></td>
+                    </tr>
+                    <tr>
+                        <td>WEB</td>
+                        <td><input type="text" id="txtweb" onblur="chkweb();"></td>
+                        <td><span id="pppp"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="total" onclick="total();"><input type="button" value="per" onclick="doper();"><input type="button" value="new" onclick="ne();"><input type="button" value="submit" onclick="dosubmit(); ne();"></td>
+                        <td align="center"><input type="button" value="fun" onclick="total(); doper(); result();"></td>
+                    </tr>
+                    <tr>
+                        <td>TOTAL</td>
+                        <td><input type="text" id="txttotal"></td>
+                    </tr>
+                    <tr>
+                        <td>PER</td>
+                        <td><input type="text" id="txtper"></td>
+                    </tr>
+                    <tr>
+                        <td>RESULT</td>
+                        <td><input type="text" id="yaar"></td>
+                    </tr>
+                </table>
+
+
+
+
+
+            </form>
+
+
+        </fieldset>
+
+
+    </center>
+</body></html>

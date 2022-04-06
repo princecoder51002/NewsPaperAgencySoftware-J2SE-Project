@@ -1,0 +1,4 @@
+add new column "city" in medcines table
+fetch city from profile tables against the email id
+
+save this city in insert query here
