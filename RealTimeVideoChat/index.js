@@ -2,7 +2,7 @@ const express = require("express");
 const socket = require("socket.io");
 const app = express();
 
-var server = app.listen(4000, function () {
+var server = app.listen(process.env.PORT || 4000, function () {
   console.log("hii prince");
 });
 

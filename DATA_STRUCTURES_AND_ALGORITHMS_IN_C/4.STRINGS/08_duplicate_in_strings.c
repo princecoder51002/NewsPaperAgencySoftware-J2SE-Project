@@ -1,33 +1,33 @@
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main()
-// {
-//     int count, i, j;
-//     char a[30];
-//     printf("enter string: \n");
-//     gets(a);
-//     for (i = 0; a[i] != '\0'; i++)
-//     {
-//         count = 1;
-//         if (a[i] != -1)
-//         {
-//             for (j = i + 1; a[j] != '\0'; j++)
-//             {
-//                 if (a[i] == a[j])
-//                 {
-//                     count++;
-//                     a[j] = -1;
-//                 }
-//             }
-//             if (count > 1)
-//             {
-//                 printf("duplicated character: %c\n", a[i]);
-//                 printf("%c appearing %d times\n", a[i], count);
-//             }
-//         }
-//     }
-//     return 0;
-// }
+int main()
+{
+    int count, i, j;
+    char a[30];
+    printf("enter string: \n");
+    gets(a);
+    for (i = 0; a[i] != '\0'; i++)
+    {
+        count = 1;
+        if (a[i] != -1)
+        {
+            for (j = i + 1; a[j] != '\0'; j++)
+            {
+                if (a[i] == a[j])
+                {
+                    count++;
+                    a[j] = -1;
+                }
+            }
+            if (count > 1)
+            {
+                printf("duplicated character: %c\n", a[i]);
+                printf("%c appearing %d times\n", a[i], count);
+            }
+        }
+    }
+    return 0;
+}
 
 // now using hash table
 
@@ -67,24 +67,24 @@
 
 // now using bits
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-    int i, h = 0, x = 0;
-    char a[30];
-    printf("enter string: \n");
-    gets(a);
-    for (i = 0; a[i] != '\0'; i++)
-    {
-        x = 1;
-        x = x << (a[i] - 97);
-        if ((x & h) > 0)
-        { // masking condition
-            printf("duplicated character: %c\n", a[i]);
-        }
-        else
-            h = x | h; // merging condition
-    }
-    return 0;
-}
+// int main()
+// {
+//     int i, h = 0, x = 0;
+//     char a[30];
+//     printf("enter string: \n");
+//     gets(a);
+//     for (i = 0; a[i] != '\0'; i++)
+//     {
+//         x = 1;
+//         x = x << (a[i] - 97);
+//         if ((x & h) > 0)
+//         { // masking condition
+//             printf("duplicated character: %c\n", a[i]);
+//         }
+//         else
+//             h = x | h; // merging condition
+//     }
+//     return 0;
+// }
